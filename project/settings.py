@@ -39,6 +39,9 @@ DJANGO_APPS = [
 
 PROJECT_APPS = [
     'core',
+    'accounts',
+    'community',
+    'feed',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
@@ -123,4 +126,4 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-AUTH_USER_MODEL = 'core.User'
+AUTH_USER_MODEL = 'accounts.User'
