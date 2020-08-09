@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
+
 # 사용자
 class User(AbstractUser):
     nickname = models.CharField(max_length=10, default='unknown')
