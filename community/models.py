@@ -18,7 +18,7 @@ class Group(models.Model):
 
 # 그룹에서 사용하는 프로필
 class Profile(models.Model):
-    profile_name = models.CharField(max_length=10, null=True)
+    profile_name = models.CharField(max_length=20, null=True)
     STATUS_CHOICES = (
         ('g', 'invite'),  # 그룹에서 유저에게 초대
         ('u', 'request'),  # 유저가 그룹으로 가입요청
@@ -37,7 +37,7 @@ class Profile(models.Model):
 class Feed(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     group = models.ForeignKey(Group, on_delete=models.CASCADE)
-    proof = models.FileField()
+    proof = models.FileField(blank=True, null=True)
     created_date = models.DateTimeField(auto_now=True)
 
 
