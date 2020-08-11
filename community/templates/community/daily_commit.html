@@ -6,6 +6,10 @@
 </head>
 <body>
     <h1>윤다영은 매일 커밋을 잘 하고 있는가?</h1>
-
+    {% for feed in feed_list %}
+        <p>커밋 날짜 및 시간 : {{ feed.created_date }}</p>
+        <a href="{{ feed.proof }}">커밋 링크</a>
+        <hr>
+    {% endfor %}
 </body>
 </html>
