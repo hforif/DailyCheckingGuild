@@ -1,5 +1,5 @@
 from apscheduler.schedulers.background import BackgroundScheduler
-from django_apscheduler.jobstores import register_job
+# from django_apscheduler.jobstores import register_job
 import requests, datetime
 from community.models import Feed, Profile
 from django.conf import settings
