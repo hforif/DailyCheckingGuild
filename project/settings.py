@@ -36,6 +36,7 @@ DJANGO_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_apscheduler',
 ]
 
 PROJECT_APPS = [
@@ -133,3 +134,15 @@ LOGIN_URL = reverse_lazy('login')
 LOGIN_REDIRECT_URL = reverse_lazy('accounts_main')
 
 LOGOUT_REDIRECT_URL = reverse_lazy('accounts_main')
+
+
+# 깃 커밋 확인 업무를 자동화하기 위한 스케쥴러
+SCHEDULER_CONFIG = {
+    "apscheduler.jobstores.default": {
+        "class": "django_apscheduler.jobstores:DjangoJobStore"
+    },
+    'apscheduler.executors.processpool': {
+        "type": "threadpool"
+    },
+}
+SCHEDULER_AUTOSTART = True
